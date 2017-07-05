@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Web/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Web/">
+
+<xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:8080/WebService/DisplayWebService?xsd=1" />
+
+<xs:element name="display" type="tns:display" />
+
+<xs:element name="displayResponse" type="tns:displayResponse" />
+
+<xs:complexType name="display">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="displayResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:stringArray" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
