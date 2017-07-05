@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Update Book</title>
+        <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link rel="stylesheet" href="css/style2.css" />
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="script.js"></script>
+        <style type="text/css">
+           body{
+                 background-image: url('images/photo_bg.jpg');
+                 background-size: 1700px;
+             }
+            .display-table .text-input{
+    background-color:#fbfbfb;
+    border:solid 50px #000000;
+    margin-bottom:8px;
+    width:178px;
+    padding:8px 5px;
+    color:#797979;
+}
+.update-Book-button {
+        align-content: center;
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 20px;
+	font-weight: bold;
+	width: 150px; 
+	padding: 5px 10px; 
+	color:  #000000;
+	margin-bottom: 15px;
+	background:  #2aeaec;
+}
+label {
+	font-size: 25px; 
+	width: 150px; 
+	display: block; 
+	text-align: right;
+	margin-right: 10px;
+        color:  #2aeaec;
+        font-style: italic;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+input {
+	width: 250px;
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 16px;
+}
+.log {
+        background: #0fa1e0;
+  border-bottom: 1px dotted #31b7f1;
+  font-size: 11px;
+  filter: none;
+  display: block;
+  line-height: 120%;
+  padding: 10px;
+  width: 80px;
+  color: #ffffff;
+}
+h3{
+    color:white;
+}
+h1{
+    color: #2aeaec;
+     font-style:  italic;
+}
+        </style>
+    </h:head>
+    <h:body>
+        <div id='cssmenu'>
+<ul>
+    <li><h:form><h:commandLink action="insert" value="Add Book" styleClass="a"/></h:form></li>
+    <li ><h:form><h:commandLink action="index" value="Manage Books" styleClass="a"/></h:form></li>
+   <li style="float: right;" >      <h:form>
+              <h:commandButton value="Logout" action="#{loginController.logout()}" styleClass="log" />
+         </h:form></li>
+   <li style="float:right;" ><h3>    Welcome #{loginController.session_check()} !!</h3></li>
+   
+     </ul>
+</div>
+        
+        <center>
+            <f:view>
+                <h1>Update Book</h1>
+                <h:form>
+                    <h:panelGrid columns="3" styleClass="display-table" >
+                        <h:outputLabel value="Book ISBN" styleClass="label"/>
+                        <h:inputText value="#{dbUpdateManagedbean.ISBN}" readonly="true" required="true" requiredMessage="Please Enter ISBN" id="isbn" styleClass="input">
+                        </h:inputText><h:message for="isbn" />
+                        <h:outputLabel value="Book Title" styleClass="label"/>
+                        <h:inputText value="#{dbUpdateManagedbean.title}" required="true" requiredMessage="Please Enter Title" id="Btitle" styleClass="input">
+                        </h:inputText><h:message for="Btitle" />
+                        <h:outputLabel value="Edition Number" styleClass="label"/>
+                        <h:inputText value="#{dbUpdateManagedbean.editionNumber}" required="true" requiredMessage="Please Enter EditionNumber" id="en" styleClass="input">
+                        </h:inputText><h:message for="en" />
+                        <h:outputLabel value="Copyright" styleClass="label"/>
+                        <h:inputText value="#{dbUpdateManagedbean.copyright}" required="true" requiredMessage="Please Enter Copyright" id="cp" styleClass="input">
+                        </h:inputText><h:message for="cp" />
+                        <h:outputLabel value="First Name" styleClass="label"/>
+                        <h:inputText value="#{dbUpdateManagedbean.firstName}" required="true" requiredMessage="Please Enter FirstName" id="fn" styleClass="input">
+                        </h:inputText><h:message for="fn" />
+                        <h:outputLabel value="Last Name" styleClass="label"/>
+                        <h:inputText value="#{dbUpdateManagedbean.lastName}" required="true" requiredMessage="Please Enter LastName" id="ln" styleClass="input">
+                        </h:inputText><h:message for="ln" />
+                        <h:commandButton value="Update Book" action="index" actionListener="#{dbUpdateManagedbean.update()}" styleClass="update-Book-button">
+                        
+                            <f:param name="ISBN" value="#{dbUpdateManagedbean.ISBN}" />
+                        </h:commandButton>
+                         <h:commandButton value="Cancel" action="index"  styleClass="update-Book-button">
+                        
+                            
+                        </h:commandButton>
+                        
+                  </h:panelGrid>
+                </h:form>
+            </f:view>
+        </center>
+    </h:body>
+</html>
+
