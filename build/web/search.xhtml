@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Book Library</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            
+           .display-table{   
+   border-collapse:collapse;
+   border-style: inset;
+   border-bottom: 1px solid grey;
+   font-family: Tahoma, Vardana, Segoe,sans-serif;
+   border:1px solid #000000;
+   background-color:  whitesmoke;
+}
+
+.display-table-header{
+   text-align:center;
+   border-bottom: 1px solid grey;
+   background: burlywood;
+   color: black;
+   border-color:1px solid blue;  
+   padding:10px;
+}
+
+.display-table-odd-row{
+   text-align:center;
+   border-top: 1px solid grey;
+   background:  #66CCFF;
+   color:  #000000;
+   padding: 10px 10px;
+}
+
+.display-table-even-row{
+   text-align:center;
+   border-top: 1px solid grey;
+   background: #D0D0D0;
+   color: black;
+   padding: 10px 10px;
+}
+a:link, a:visited {
+    background-color: #66CCFF;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;	
+    text-decoration: none;
+    display: inline-block;
+}
+ .login-button {
+        align-content: center;
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 12px;
+	font-weight: bold;
+	width: 120px; 
+	padding: 5px 10px; 
+	
+	margin-bottom: 15px;
+	background: #cccccc;
+ }
+a:hover, a:active {
+    background-color: #666;
+}
+
+
+   body{
+        background:  url(images/photo_bg.jpg) ;
+    }
+    h5{
+        text-transform: uppercase;
+	color: #2aeaec;
+        font-style: italic;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 1.4em;
+	line-height: 2.8em;
+    }
+    .search {
+        align-content: center;
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 12px;
+	font-weight: bold;
+	width: 120px; 
+	padding: 5px 10px; 
+	color:  #000000;
+	margin-bottom: 15px;
+	background:  #2aeaec;
+    }
+    input {
+	width: 300px;
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 4px; 
+	font-size: 16px;
+}
+/*------------------*/
+.table-container {
+    /*height: 20em;*/
+    width: 100%;
+    
+}
+table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+table thead {
+     text-align:center;
+   border-top: 1px solid grey;
+  /* background:none repeat scroll 0 0 #66CCFF;*/
+  background: #66CCFF;
+    /* head takes the height it requires, 
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: 100%;
+}
+table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table tbody tr {
+    width: 100%;
+}
+table thead{
+     display: table;
+    table-layout: fixed;
+    text-align:center;
+   border-top: 1px solid grey;
+   background:   #66CCFF;
+}
+table tbody tr {
+    display: table;
+    table-layout: fixed;
+    text-align:center;
+   border-top: 1px solid grey;
+   color: black;
+   background:  #D0D0D0;
+}
+/* decorations */
+.table-container {
+    border: 1px solid black;
+    padding: 0.3em;
+}
+table {
+    /*border: 1px solid lightgrey;*/
+}
+table td, table th {
+    padding: 0.3em;
+   /* border: 1px solid lightgrey;*/
+}
+        </style>
+            
+        
+        
+    </h:head>
+    <h:body>
+        <div id="container">
+         <div id="header">
+    	<div class="logo">Book Store</div>
+        <div class="author">design by Mahananda Nyamagouda</div>
+        <div id="navcontainer">
+            <ul id="navlist">
+                <li id="active"><a href="mainPage.xhtml">HOME</a></li>
+                <li><a href="login.xhtml">MAINTAIN</a></li>
+               
+               
+            </ul>
+        </div>
+    </div>
+            <div>
+    	<div class="bookLeft"><img src="images/bookLeft.jpg" alt="" /></div>
+       
+        <div class="bookRight"><img src="images/bookRight.jpg" alt="" /></div> 
+        <div class="bookCenter">JavaServer Faces (JSF) is a Java specification for building component-based user interfaces for web applications.[1] It was formalized as a standard through the Java Community Process and is part of the Java Platform, Enterprise Edition.
+
+JSF 2 uses Facelets as its default templating system. Other view technologies such as XUL or plain Java[2] can also be employed. In contrast, JSF 1.x uses JavaServer Pages (JSP) as its default templating system. <br /><br />JSF is a simple static Dependency Injection(DI) framework.Using @ManagedProperty annotation a managed bean's property can be injected in another managed bean. .<br />The project is to develop Book Application based on the three-tier architecture. The apache server has been installed to host the application. The project uses JSF (Java Server Faces) for the front end design, JSF Managed Beans for the middle-tier(Communication between JSF and Database) and finally third-tier which is database. This project contains operations such as Insert Book, Delete Book, Update Book, Search Query and Display Data. <br /> </div>
+        
+    </div>
+           <div class="clearfloat"></div>
+           <h:form>
+        <h5>Search For Books</h5><h:inputText value="#{dbQuery.searchkey}" p:placeholder='Search For Books' />
+        <h:commandButton value="Search" action="search" styleClass="search" />
+        
+    </h:form>
+            <h5>Books Found </h5>
+        
+           <div class="clearfloat"></div>
+    <div class="mainContent">
+   <h1>List of all the entries of all three tables.</h1>
+        <center>
+         <f:view>
+           <h:form>   
+                    
+                   <div class="table-container" >
+                    <h:dataTable var="list" value="#{dbQuery.search()}" 
+                                 styleClass="display-table"
+                                 headerClass="display-table-header"
+                                 rowClasses="display-table-odd-row,display-table-even-row"
+                                 >
+                        <h:column>
+                          <f:facet name="header">ISBN</f:facet>
+                            <h:outputText value="#{list.ISBN}" />                          
+                        </h:column>
+                        <h:column>
+                          
+                          <f:facet name="header">Title</f:facet>
+                            <h:outputText value="#{list.title}" />                          
+                        </h:column>
+                        <h:column>
+                       
+                            <f:facet name="header">Edition Number</f:facet>
+                            <h:outputText value="#{list.editionNumber}" />                          
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Copyright</f:facet>
+                            <h:outputText value="#{list.copyright}" />                          
+                        </h:column>
+                        <h:column>
+                           <f:facet name="header">First Name</f:facet>
+                            <h:outputText value="#{list.firstName}" />                          
+                        </h:column>
+                        <h:column>
+                           <f:facet name="header">Last Name</f:facet>
+                            <h:outputText value="#{list.lastName}" />                          
+                        </h:column>
+                        
+                    </h:dataTable>
+                    </div>
+                   
+                    
+                </h:form>
+            
+            </f:view>
+            
+        </center>   
+        
+    </div>
+             </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>login </title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="css/style1.css"/>
+        <link rel="stylesheet" href="css/animate.css"/>
+         <style>
+             body{
+                background-image: url(images/photo_bg.jpg);
+             }
+             .login-button {
+        align-content: center;
+	border: 1px solid #666; 
+	border-radius: 10px; 
+	padding: 4px; 
+	font-size: 12px;
+	font-weight: bold;
+	width: 120px; 
+	padding: 5px 10px; 
+        font-family:  sans-serif;
+	color: #888;
+	margin-bottom: 15px;
+	background: #665851;
+}
+.login-button:hover{
+    opacity: 0.7;
+	transition: 0.5s;
+}
+.search {
+        align-content: center;
+	border: 1px solid #666; 
+	border-radius: 5px; 
+	padding: 10px; 
+	font-size: 12px;
+	font-weight: bold;
+	width: 200px; 
+	padding: 5px 10px; 
+	color: #070707;
+	margin-bottom: 15px;
+	background: #2aeaec;
+    }
+         </style>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton value="Back To Main" action="mainPage" styleClass="search" /></h:form>
+         <center>
+         <f:view>
+             <div  class="container">
+		<div class="top">
+                    <h1  id="title" class="hidden"><span id="logo">Book Library </span></h1>
+		</div>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Log In</h2>
+			</div>
+                    
+                    <h:form>
+                        Username :<h:inputText value="#{loginController.username}" /><br />
+                        Password :<h:inputSecret value="#{loginController.password}" /><br/>
+                       
+                            <h:commandButton value="Login" action="#{loginController.login()}" styleClass="login-button"/>
+                         <a href="#"><p class="small">Forgot your password?</p></a>
+
+                        </h:form>
+             </div>
+             </div>
+         </f:view>
+         </center>
+    </h:body>
+    <script>
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+	$('#password').focus(function() {
+		$('label[for="password"]').addClass('selected');
+	});
+	$('#password').blur(function() {
+		$('label[for="password"]').removeClass('selected');
+	});
+</script>
+</html>
+
